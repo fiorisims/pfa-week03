@@ -19,8 +19,12 @@ Line 8: n = DT["num_cacti"]:
 The n is a local variable/shorthand for the loop which is where the number of cacti slider value from the DT is stored
 Line 9: positions = []:
 The [] creates an empty list. This is where the x and z coordinates of each cactus are stored. 
-
-
+Line 10: if DT["layout"] == "grid":
+The first line of this loop concerns the orientation and centering of the cacti based on how many are asked for. It organizes them by checking if the layout is set to grid and if true, it checks the lines of code that build a rectangular grid. 
+Loop: for ai in range(random.randint(DT["arms_min"], DT["arms_max"])):
+        idx, ap = add_arm(px, pz, tid, ai, body_mat, spike_mat, body_r, body_h, idx)
+        parts += ap
+Loop Paragraph Explanation: This first sentence in the loop defines how many arms can be added to the cactus body. The selected size range has been set to random so it can be anything. Idx is shorthand for index and ap is shorthand for the add_arm parts list. Parts += ap allows the create_cactus GUI to group the list (px, pz, tid, ai, body_mat, spike_mat, body_r, body_h, idx) into a tuple. This tuple is shorthanded to (idx, parts). 
 
   
     
